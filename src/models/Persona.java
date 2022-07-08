@@ -4,7 +4,7 @@ public class Persona {
 	private String nombre;
 	private String apellido;
 	
-	
+	public Persona() {}
 	
 	public Persona(String nombre, String apellido) {
 		this.nombre = nombre;

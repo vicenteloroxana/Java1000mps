@@ -38,6 +38,7 @@ public class UsuarioDaoImp implements IUsuarioDao{
 		try {
 			ResultSet rs = stmt.executeQuery(sql);
 			while(rs.next()) {
+				c = new Usuario();
 				c.setId(rs.getInt("id_cliente"));
 				c.setNombre(rs.getString("nombre"));
 				c.setApellido(rs.getString("apellido"));

@@ -74,7 +74,7 @@ public class PruebaControlador {
 						System.out.print("Ingrese su contrasenia: ");
 						String contraseniaCliente = sc.next();
 						Usuario cl = clienteServicio.getOne(contraseniaCliente);
-						if(cl != null && cl.getContrasenia() == contraseniaCliente && cl.getNombre() == nombreCliente) {
+						if(cl != null && cl.getContrasenia().equals(contraseniaCliente) && cl.getNombre().equals(nombreCliente)) {
 							System.out.println("Bienvenido/a "+  cl.getNombre());
 						}
 						else {
@@ -155,7 +155,7 @@ public class PruebaControlador {
 						System.out.print("Ingrese su contrasenia: ");
 						String contraseniaCliente = sc.next();
 						Usuario cl = clienteServicio.getOne(contraseniaCliente);
-						if(cl != null && cl.getContrasenia() == contraseniaCliente && cl.getNombre() == nombreCliente ) {
+						if(cl != null && cl.getContrasenia().equals(contraseniaCliente) && cl.getNombre().equals(nombreCliente)) {
 							System.out.println("Bienvenido/a "+  cl.getNombre());
 						}
 						else {

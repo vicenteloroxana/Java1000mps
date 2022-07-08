@@ -5,6 +5,7 @@ import java.util.List;
 public class Usuario extends Persona{
 	private int id;
 	private String contrasenia;
+	public Usuario() {super();}
 	public Usuario(String nombre, String apellido,  String contrasenia) {
 		super(nombre, apellido);
 		this.contrasenia = contrasenia;

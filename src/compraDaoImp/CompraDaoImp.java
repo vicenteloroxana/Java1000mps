@@ -30,11 +30,11 @@ public class CompraDaoImp implements ICompraDao {
 	}
 	
 	public void usuariosConCompra() {
-		sql = "SELECT clientes.nombre, clientes.apellido\r\n" + 
-				"FROM clientes\r\n" + 
+		sql = "SELECT usuarios.nombre, usuarios.apellido\r\n" + 
+				"FROM usuarios\r\n" + 
 				"INNER JOIN compras ON \r\n" + 
-				"clientes.id_cliente = compras.id_cliente\r\n" +
-				"WHERE compras.autorizado=1'";
+				"usuarios.id_cliente = compras.id_cliente\r\n" +
+				"WHERE compras.autorizado=1";
 		try {
 			ResultSet rs = stmt.executeQuery(sql);
 			while(rs.next()) {
@@ -51,13 +51,13 @@ public class CompraDaoImp implements ICompraDao {
 	}
 	public void usuariosConProductos(String nombre) {
 		sql = "SELECT productos.nombre, productos.precio\r\n" + 
-				"FROM clientes\r\n" + 
+				"FROM usuarios\r\n" + 
 				"INNER JOIN compras ON \r\n" + 
-				"clientes.id_cliente = compras.id_cliente\r\n" +
+				"usuarios.id_cliente = compras.id_cliente\r\n" +
 				"INNER JOIN carrito_producto ON \r\n" + 
 				"compras.id_carrito = carrito_producto.id_carrito\r\n" + 
 				"JOIN productos ON productos.id_producto = carrito_producto.id_producto\r\n" +
-				"WHERE clientes.nombre='" + nombre + "'";
+				"WHERE usuarios.nombre='" + nombre + "'";
 		try {
 			ResultSet rs = stmt.executeQuery(sql);
 			while(rs.next()) {
